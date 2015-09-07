@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link href="/swiperTest/swiper3.08.min.css" rel="stylesheet" type="text/css"/>
+		<script type="text/javascript" src="/swiperTest/swiper3.0.8.min.js" ></script>
+		<script type="text/javascript" src="/javaScript/dateHelper.js"></script>
+		
+	</head>
+	<body>
+		<div>Hello, world!</div>
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide"><img src="/picture/page_1.jpg" /></div>
+				<div class="swiper-slide"><img src="/picture/page_2.jpg" /></div>
+				<div class="swiper-slide"><img src="/picture/page_3.jpg" /></div>
+				<div class="swiper-slide"><img src="/picture/page_4.jpg" /></div>
+				<div class="swiper-slide"><img src="/picture/page_5.jpg" /></div>
+			</div>
+		</div>
+		<div class="dateEare">
+			<tr>
+				<td>当前时间</td>
+				<td><input type="text" id="now" disabled="true" value=""/></td>
+			</tr>
+		</div>
+		<div>
+			<tr>
+				<td>第一个数字</td>
+				<td><input type="text" id="num1" /></td>
+			</tr>
+			<tr>
+				<td>第二个数字</td>
+				<td><input type="text" id="num2" /></td>
+			</tr>
+			<tr>
+				<td>运算结果</td>
+				<td><input type="text" id="resultNo1" /></td>
+			</tr>
+			<tr>
+				<td><input type="button" id="operation1" value="加运算"/></td>
+			</tr>
+		</div>
+		<div>
+			<tr>
+				<td>第一个数字</td>
+				<td><input type="text" id="num3" /></td>
+			</tr>
+			<tr>
+				<td>第二个数字</td>
+				<td><input type="text" id="num4" /></td>
+			</tr>
+			<tr>
+				<td>运算结果</td>
+				<td><input type="text" id="resultNo2" /></td>
+			</tr>
+			<tr>
+				<td><input type="button" id="operation2" value="减运算"/></td>
+			</tr>
+		</div>
+		<div>
+			<tr>
+				<td>第一个数字</td>
+				<td><input type="text" id="num5" /></td>
+			</tr>
+			<tr>
+				<td>第二个数字</td>
+				<td><input type="text" id="num6" /></td>
+			</tr>
+			<tr>
+				<td>第三个数字</td>
+				<td><input type="text" id="num7" /></td>
+			</tr>
+			<tr>
+				<td>运算结果</td>
+				<td><input type="text" id="resultNo3" /></td>
+			</tr>
+			<tr>
+				<td><input type="button" id="operation3" value="求最大值"/></td>
+			</tr>
+			<tr>
+				<td><input type="button" id="operation4" value="求最小值"/></td>
+			</tr>
+		</div>
+		<div>
+			<tr>
+				<td>特殊字符输出</td>
+				<td><input type="text" disabled="disabled" id="teshu" /><td>
+			</tr>
+			<tr>	
+				<td><input type="button" id="out1" value="输出"/></td>
+			</tr>
+		</div>
+		<div>
+			<tr>
+				<td>变量提前声明</td>
+			</tr>
+			<tr>
+				<td><input type="button" id="param1" value="结果"/></td>
+			</tr>
+		</div>
+	<script>
+		var global = "global";
+		
+		var mySwiper = new Swiper('.swiper-container',{
+			autoplay:3000
+		})
+		
+		var now = getDate();
+		document.getElementById("now").value = now;
+		
+		var operation1 = document.getElementById("operation1");
+		operation1.onclick = function(){
+			var num1 = document.getElementById("num1").value - 0;
+			var num2 = document.getElementById("num2").value - 0;
+			
+			document.getElementById("resultNo1").value = num1 + num2;
+		}
+		
+		var operation2 = document.getElementById("operation2");
+		operation2.addEventListener("click", function(){
+			var num3 = document.getElementById("num3").value;
+			var num4 = document.getElementById("num4").value;
+			num3 = Number(num3);
+			num4 = Number(num4);
+			
+			document.getElementById("resultNo2").value = num3 - num4;
+		}, false);
+
+		var operation3 = document.getElementById("operation3");
+		operation3.addEventListener("click", function(){
+			var num5 = document.getElementById("num5").value;
+			var num6 = document.getElementById("num6").value;
+			var num7 = document.getElementById("num7").value;
+			
+			num5 = Number(num5);
+			num6 = Number(num6);
+			num7 = Number(num7);
+			
+			document.getElementById("resultNo3").value = Math.max(num5, num6, num7);
+		},false);
+		
+		var operation4 = document.getElementById("operation4");
+		operation4.addEventListener("click", function(){
+			var num5 = document.getElementById("num5").value;
+			var num6 = document.getElementById("num6").value;
+			var num7 = document.getElementById("num7").value;
+			
+			num5 = Number(num5);
+			num6 = Number(num6);
+			num7 = Number(num7);
+			
+			document.getElementById("resultNo3").value = Math.min(num5, num6, num7);
+		},false);
+		
+		var out1 = document.getElementById("out1");
+		out1.addEventListener("click",function(){
+			var text = '\'hello,world!\'\n I\'m Lilei!';
+			document.getElementById("teshu").value = text;
+		}, false);
+		
+		var param1 = document.getElementById("param1");
+		param1.addEventListener("click",function(){
+			console.log(global);
+			var global = "local";
+			console.log(global);
+		}, false);
+	</script>
+	</body>
+</html>
