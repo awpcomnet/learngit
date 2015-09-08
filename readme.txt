@@ -4,4 +4,4 @@ Git has a mutable index called stage.
 Git tracks changes of files.
 This is private test.
 Creating a new branch is quick AND simple.
-Learn merge with no fast forward.
+Learn merge with no fast forward, so nice.
