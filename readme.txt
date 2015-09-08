@@ -5,3 +5,4 @@ Git tracks changes of files.
 This is private test.
 Creating a new branch is quick AND simple.
 Learn merge with no fast forward, so nice.
+Learn git stash at windows.so?.
