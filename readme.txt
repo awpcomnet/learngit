@@ -7,3 +7,5 @@ Creating a new branch is quick AND simple.
 Learn merge with no fast forward, so nice.
 Learn git stash at windows.so?.
 New branch dev.
+more and more.you know.
+ccbb
